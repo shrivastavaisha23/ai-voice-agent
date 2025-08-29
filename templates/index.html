@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-[#0b0b1c] p-8 flex items-center justify-center min-h-screen">
+
+    <!-- Main Container -->
+    <div class="flex flex-col lg:flex-row gap-8 w-full max-w-7xl mx-auto">
+        
+        <!-- Left Side: Main UI -->
+        <div class="flex-1 gradient-bg p-8 rounded-3xl shadow-lg border border-[#3a3a5e] flex flex-col items-center relative">
+            
+            <!-- User Interface -->
+            <div class="text-center w-full">
+                <div class="flex items-center justify-center gap-4 mb-16">
+                    <i class="fas fa-robot text-4xl text-[#8d62ff]"></i>
+                    <h1 class="text-4xl font-bold text-transparent bg-clip-text" style="background-image: linear-gradient(to right, #00f08a, #00c7e0);">HELLO! I'M ELARA</h1>
+                </div>
+
+                <!-- Microphone Button -->
+                <div id="mic-container" class="relative w-48 h-48 cursor-pointer mx-auto flex items-center justify-center">
+                    <div id="pulse-circle" class="absolute w-full h-full rounded-full bg-orange-500 opacity-75 hidden"></div>
+                    <div id="mic-circle" class="relative w-32 h-32 rounded-full gradient-bg shadow-xl flex items-center justify-center">
+                        <i id="mic-icon" class="fas fa-microphone text-white text-4xl"></i>
+                    </div>
+                </div>
+
+                <div id="status-message" class="mt-8 text-lg font-medium">Click the microphone to start talking.</div>
+            </div>
+
+            <!-- Error/Status Message Box -->
+            <div id="message-box" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-6 rounded-lg shadow-xl text-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none" style="background-color: rgba(220, 38, 38, 0.8);">
+                <i class="fas fa-exclamation-triangle text-white text-2xl mb-2"></i>
+                <p id="message-text" class="text-white font-semibold">An error occurred.</p>
+                <button onclick="hideMessage()" class="mt-4 px-4 py-2 bg-white text-red-600 rounded-full font-bold">OK</button>
+            </div>
+        </div>
+
+        <!-- Right Side: Configuration & Chat History -->
+        <div class="w-full lg:w-96 flex flex-col gap-8">
+            
+            <!-- Configuration Section -->
+            <div id="configuration-card" class="bg-[#16162a] p-6 rounded-3xl shadow-lg border border-[#3a3a5e] block">
+                <div class="flex items-center justify-between cursor-pointer mb-4" onclick="toggleConfig()">
+                    <h2 class="text-xl font-semibold text-white">Configuration</h2>
+                    <i id="config-toggle-icon" class="fas fa-chevron-down text-white"></i>
+                </div>
+                <div id="config-content" class="configuration-section">
+                    <p class="text-sm text-gray-400 mb-2">Configure your AI agent's API keys.</p>
+                    <div class="mb-4">
+                        <label for="geminiApiKey" class="block text-sm font-medium text-white mb-1">Gemini API Key</label>
+                        <input type="password" id="geminiApiKey" class="w-full p-2 rounded-lg bg-[#2a2a47] border border-[#3a3a5e] focus:outline-none focus:ring-2 focus:ring-[#8d62ff] text-white" placeholder="Your Gemini API Key">
+                    </div>
+                    <div class="mb-4">
+                        <label for="murfApiKey" class="block text-sm font-medium text-white mb-1">Murf API Key</label>
+                        <input type="password" id="murfApiKey" class="w-full p-2 rounded-lg bg-[#2a2a47] border border-[#3a3a5e] focus:outline-none focus:ring-2 focus:ring-[#8d62ff] text-white" placeholder="Your Murf API Key">
+                    </div>
+                    <div class="mb-4">
+                        <label for="assemblyApiKey" class="block text-sm font-medium text-white mb-1">AssemblyAI API Key</label>
+                        <input type="password" id="assemblyApiKey" class="w-full p-2 rounded-lg bg-[#2a2a47] border border-[#3a3a5e] focus:outline-none focus:ring-2 focus:ring-[#8d62ff] text-white" placeholder="Your AssemblyAI API Key">
+                    </div>
+                    <div class="mb-4">
+                        <label for="newsApiKey" class="block text-sm font-medium text-white mb-1">News API Key</label>
+                        <input type="password" id="newsApiKey" class="w-full p-2 rounded-lg bg-[#2a2a47] border border-[#3a3a5e] focus:outline-none focus:ring-2 focus:ring-[#8d62ff] text-white" placeholder="Your News API Key">
+                    </div>
+                    <div class="mb-4">
+                        <label for="openWeatherApiKey" class="block text-sm font-medium text-white mb-1">OpenWeather API Key</label>
+                        <input type="password" id="openWeatherApiKey" class="w-full p-2 rounded-lg bg-[#2a2a47] border border-[#3a3a5e] focus:outline-none focus:ring-2 focus:ring-[#8d62ff] text-white" placeholder="Your OpenWeather API Key">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat History Section -->
+            <div class="flex-1 bg-[#16162a] p-6 rounded-3xl shadow-lg border border-[#3a3a5e] flex flex-col">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-white">Chat History</h2>
+                    <button onclick="clearChatHistory()" class="text-sm text-[#8d62ff] hover:text-white transition-colors duration-200">Clear History</button>
+                </div>
+                <div id="chat-history" class="flex-1 scrollable-chat">
+                    <!-- Chat messages will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
