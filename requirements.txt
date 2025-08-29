@@ -3,3 +3,5 @@ Flask-Sock
 python-dotenv
 requests
 google-generativeai
+fastapi
+uvicorn
