@@ -5,3 +5,5 @@ requests
 google-generativeai
 fastapi
 uvicorn
+gunicorn
+gevent
