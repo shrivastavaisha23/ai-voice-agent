@@ -1,4 +1,4 @@
-AI Voice Agent – ELARA AI
+**AI Voice Agent – ELARA AI**
 
 An interactive AI Voice Agent built with FastAPI, AssemblyAI, MurfAI, and OpenAI, capable of real-time conversation using speech-to-text (STT), text-to-speech (TTS), personas, and special skills.
 
