@@ -9,22 +9,30 @@ An interactive AI Voice Agent built with FastAPI, AssemblyAI, MurfAI, and OpenAI
 ![AssemblyAI](https://img.shields.io/badge/AssemblyAI-STT-red)
 ![Gemini](https://img.shields.io/badge/Gemini-LLM-purple)
 ![Murf](https://img.shields.io/badge/Murf-TTS-yellow)
-![License](https://img.shields.io/badge/License-MIT-lightgrey
 
-This project was built as part of the 30 Days of AI Voice Agents Challenge. By @MURFAI
 
-🚀 Features
+**This project was built as part of the 30 Days of AI Voice Agents Challenge. By @MURFAI**
 
-✅ Speech-to-Text (STT) – Convert spoken input into text using AssemblyAI.
-✅ Text-to-Speech (TTS) – Convert AI responses into natural voice using MurfAI.
-✅ Conversational AI – Powered by OpenAI LLM for dynamic and intelligent replies.
-✅ Persona Mode – Switch between fun personas (e.g., Pirate, Cowboy, Robot).
-✅ Special Skills – Agent can fetch weather, news, and web results.
-✅ User-Configurable API Keys – Enter your own API keys directly in the UI.
-✅ Real-time Web UI – Interactive frontend built with MediaStream API + JavaScript.
-✅ Deployment Ready – Hosted on Render for public access.
 
-🛠️ Tech Stack
+## 📌 Project Overview
+The **AI Voice Agent (Realtime)** enables real-time **speech-to-speech interaction**.  
+It records audio, transcribes it with **AssemblyAI**, processes with **Gemini LLM**,  
+and speaks back with **Murf TTS**.  
+
+---
+
+
+## 🚀 Features
+- 🎤 **Voice Input** → Records audio in real-time.  
+- 📝 **Speech-to-Text (STT)** → AssemblyAI for transcription.  
+- 🧠 **AI Reasoning** → Gemini LLM handles queries.  
+- 🔊 **Text-to-Speech (TTS)** → Murf converts responses.  
+- 🌐 **Web Search Integration** → Optional external info.  
+- 💾 **Chat History Storage** → Keeps logs.  
+- ⚡ **FastAPI + WebSockets** → Real-time interaction.
+ 
+
+**🛠️ Tech Stack**
 
 Backend: FastAPI (Python)
 
@@ -40,8 +48,8 @@ OpenAI (LLM for conversations)
 
 Deployment: Render
 
-📂 Project Structure
-voice-agent/
+**Project Structure**
+  voice-agent/
 │── main.py          # FastAPI backend  
 │── static/
 │    ├── index.html  # Frontend UI  
@@ -50,7 +58,9 @@ voice-agent/
 │── requirements.txt # Python dependencies  
 │── README.md        # Documentation  
 
-⚡ Getting Started
+
+**⚡ Getting Started**
+
 1️⃣ Clone the Repository
 git clone https://github.com/your-username/voice-agent.git
 cd voice-agent
@@ -65,7 +75,7 @@ uvicorn main:app --reload
 
 Simply open static/index.html in your browser.
 
-🔑 Configuration
+**🔑 Configuration**
 
 Before using the agent, you’ll need API keys for:
 
@@ -77,12 +87,12 @@ OpenAI API → Get key here
 
 ➡️ You can enter these API keys directly in the UI config section.
 
-🌍 Deployment
+**🌍 Deployment**
 
 This project is deployed on Render for public access.
 
 
-🔮 Future Improvements
+**🔮 Future Improvements**
 
 Add multilingual support (Hindi, Spanish, etc.)
 
@@ -92,13 +102,13 @@ Improve UI/UX with better styling and animations
 
 Add more special skills (calendar, reminders, finance updates)
 
-🙌 Acknowledgements
+**🙌 Acknowledgements**
 
-This project was built as part of the 30 Days of AI Voice Agents Challenge
+This project was built as part of the 30 Days of AI Voice Agents Challenge By MURFAI
 .
 Special thanks to MurfAI, AssemblyAI, and OpenAI for their APIs.
 
-👩‍💻 Author
+**👩‍💻 Author**
 
-Isha Shrivastava
+**Isha Shrivastava**
 LinkedIn: https://www.linkedin.com/in/isha-shrivastava0604?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
