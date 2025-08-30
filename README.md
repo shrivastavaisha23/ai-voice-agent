@@ -2,6 +2,15 @@
 
 An interactive AI Voice Agent built with FastAPI, AssemblyAI, MurfAI, and OpenAI, capable of real-time conversation using speech-to-text (STT), text-to-speech (TTS), personas, and special skills.
 
+
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.95%2B-green)
+![WebSockets](https://img.shields.io/badge/WebSockets-Supported-orange)
+![AssemblyAI](https://img.shields.io/badge/AssemblyAI-STT-red)
+![Gemini](https://img.shields.io/badge/Gemini-LLM-purple)
+![Murf](https://img.shields.io/badge/Murf-TTS-yellow)
+![License](https://img.shields.io/badge/License-MIT-lightgrey
+
 This project was built as part of the 30 Days of AI Voice Agents Challenge. By @MURFAI
 
 🚀 Features
