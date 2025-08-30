@@ -15,7 +15,7 @@ An interactive AI Voice Agent built with FastAPI, AssemblyAI, MurfAI, and OpenAI
 
 
 ## 📌 Project Overview
-The **AI Voice Agent (Realtime)** enables real-time **speech-to-speech interaction**.  
+The **AI Voice Agent ELARAAI** enables real-time **speech-to-speech interaction**.  
 It records audio, transcribes it with **AssemblyAI**, processes with **Gemini LLM**,  
 and speaks back with **Murf TTS**.  
 
