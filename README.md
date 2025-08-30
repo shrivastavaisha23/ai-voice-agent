@@ -62,7 +62,7 @@ Deployment: Render
 **⚡ Getting Started**
 
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/voice-agent.git
+git clone https://github.com/shrivastavaisha23/voice-agent.git
 cd voice-agent
 
 2️⃣ Install Dependencies
